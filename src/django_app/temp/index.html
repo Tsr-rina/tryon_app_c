@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>tryon_app</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+   
+        <nav class="navbar navbar-light" style="border-bottom: solid 5px black;" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TryonApp</a>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+        <br>
+        <br>
+
+        <div class='container container-m'>
+
+          <div class="card">
+            <h4 class="card-header">システムの使い方</h4>
+            <br>
+            <h5 class="card-title">　使用前の注意事項2つ</h5>         
+            <p class="card-text">　　 Google Chromeで利用してください</p>
+            <p class="card-text">　　 以下の「実験の流れ」を読み、指示に従って進めてください</p>
+            <br>            
+            <!-- <div class="card-body"> -->
+              <h4 class="card-header">実験の流れ</h4>
+              <br>         
+              <h5 class="card-title">　①人体モデルを1つ選択する</h5>
+              <p class="card-text">　　 1. 人体モデルが6体表示されるので１つ選択する</p>
+              <p class="card-text">　　 2. 下部にある「次へ」ボタンを押す</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <h5 class="card-title">　②洋服を1つ選択する</h5>
+              <p class="card-text">　　 1. 洋服が6着表示されるので１つ選択する</p>
+              <p class="card-text">　　 2. 下部にある「次へ」ボタンを押す</p>
+              <h5 class="card-title">　③試着結果を見る</h5>
+              <p class="card-text">　　選択した人体モデルが、選択した洋服を試着した画像が表示されます。その画像を見てください。</p>
+
+              <h6 class="card-title"> 　  ①〜③を3回行います。1回目、2回目、3回目で選択するものが決まっています。以下の「1回目〜3回目の説明」</h6>
+              <br>
+              <h4 class="card-header">1回目〜3回目の説明</h4> 
+              <br>
+              <h5 class="card-title">　1回目</h5>
+              <p class="card-text">　　①人体モデルの選択:自由に選択可能</p>
+              <p class="card-text">　　②洋服の選択:上段左から1つ目の画像を選択してください</p>
+              <p class="card-text">　　「続ける」ボタンを押す</p>
+              <h5 class="card-title">　2回目</h5>
+              <p class="card-text">　　①人体モデルの選択:1回目に選択した人体モデルと同じものを選択してください</p>
+              <p class="card-text">　　②洋服の選択:上段左から2つ目の画像を選択してください</p>
+              <p class="card-text">　　「続ける」ボタンを押す</p>
+              <h5 class="card-title">　3回目</h5>
+              <p class="card-text">　　①人体モデルの選択:1回目に選択した人体モデルと同じものを選択してください</p>
+              <p class="card-text">　　②洋服の選択:自由に選択可能</p>
+
+              <h6 class="card-title"> 　  人体モデルは3回とも同じものを選択し、洋服は3回とも違うものを選択するといった感じです</h6>
+              <h6 class="card-title">  　 全て読み終えたら下の「試着開始」ボタンを押してスタートしてください</h6>
+              <br>
+
+            <!-- </div> -->
+          </div>
+        </div>
+        <br>
+        <br>
+        
+          
+        
+        <form action="{% url 'tryon_app:model_select' %}" method="POST">
+            {% csrf_token %}
+
+            <div class='text-center' id='submit_btn'>
+                <!-- <p>{{ alert }}</p> -->
+                <button type="submit" class="btn btn-Light btn-lg" name="submit_btn" value="submit_btn">試着開始</button> 
+            </div>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>
