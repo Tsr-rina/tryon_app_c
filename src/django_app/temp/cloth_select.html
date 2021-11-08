@@ -1,6 +1,5 @@
 <html>
 {% load boost %}
-
     <head>
         <meta charset="utf-8">
         <title>tryon_app</title>
@@ -47,15 +46,16 @@
                     <br>
                     <div class="row">
                         {% csrf_token %}
-                        {% for image, id  in cloth_img|zip:id_count %}
+                        {% for image, id in cloth_img|zip:id_count %}
                         <div class="col-md-4 img-hidden">
                             <div class="card" style="width: 20rem;">
                                 <br>
                                 <img class='img-fluid' src="{{ MEDIA_URL }}{{ image.cloth_img }}" width="auto" height="auto"><br>
-                                <!-- <p>{{ MEDIA_URL }}{{ image.cloth_img }}</p> -->
+                                <!-- <p>{{ image.cloth_img }}</p>
+                                <p>{{ id }}</p> -->
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label id="{{ id }}" class="btn btn-Light btn-block active">
-                                      <input type="radio" name="{{ image.cloth_img }}" value="{{ image.model_name }}" autocomplete="off">選択
+                                      <input type="radio" name="{{ image.cloth_img }}"  autocomplete="off">選択
                                     </label>
                                 </div>         
 
@@ -84,8 +84,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
+
     <script>
         document.getElementById("hide_checkbox").style = "visibility:hidden;"
+
         $('#cloth1').click(function(){
             $('#cloth1').css("background-color", "#c0c0c0");
             $('#cloth2').css("background-color", "#f8f9fa");
