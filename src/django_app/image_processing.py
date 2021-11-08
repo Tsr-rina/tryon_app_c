@@ -87,9 +87,14 @@ def synthetic(get_mask_shape, after_gan,mask_path,hm_path,top, bottom, left, rig
 
     # GAN済のマスク画像が生成できたら人体モデルと合成する
     mask = cv2.resize(mask, dsize=(192,256))
-    black = [0, 0, 0]
+    for i in range(250):
+        mask = cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
+        black = [i, i,i]
+        smoke = [245, 245, 245]
+        mask[np.where((mask == black).all(axis=2))] = smoke
+    smoke = [245, 245, 245]
     hotpink = [255, 105, 180]
-    mask[np.where((mask == black).all(axis=2))] = hotpink
+    mask[np.where((mask == smoke).all(axis=2))] = hotpink
     mask = cv2.cvtColor(mask, cv2.COLOR_RGB2BGRA)
     mask[:, :,3] = np.where(np.all(mask == (180,105,255,255), axis=-1), 0, 255)  # 白色のみTrueを返し、Alphaを0にする
     # 人体モデル読み込み
