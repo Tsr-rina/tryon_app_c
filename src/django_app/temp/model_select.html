@@ -46,12 +46,12 @@
                         <!-- <p>{{ image.model_name }}</p> -->
 
                         <div class="col-md-4 img-hidden">
-                            <div class="card" style="width: 20rem;">
+                            <div id="{{ image.model_name }}_img" class="card" style="width: 20rem;">
                                 <br>
-                                <img id="{{ image.model_name }}_img" class='img-fluid' src="{{ MEDIA_URL }}{{ image.img }}" width="auto" height="auto"><br>
+                                <img class='img-fluid' src="{{ MEDIA_URL }}{{ image.img }}" width="auto" height="auto"><br>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label id="{{ image.model_name }}" lass="btn btn-Light btn-block active">
-                                      <input type="radio" name="{{ image.model_name }}" value="{{ image.model_name }}" autocomplete="off">選択
+                                    <label  id="{{ image.model_name }}" class="btn btn-Light btn-block active">
+                                      <input  type="radio" name="{{ image.model_name }}"value="{{image.model_name}}" autocomplete="off">選択
                                     </label>
                                     <!-- <p id="m_S_message"></p> -->
                                 </div>         
@@ -87,6 +87,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </body>
+
     <script>
         $('#m_S').click(function(){
             $('#m_S').css("background-color", "#c0c0c0");
