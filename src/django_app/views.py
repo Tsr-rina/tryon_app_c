@@ -27,6 +27,7 @@ def select_model(request):
         return render(request, 'model_select.html', context)       
 
 def select_cloth(request):
+    id_count = ['cloth1','cloth2','cloth3','cloth4','cloth5','cloth6']
     if request.method == 'POST':
         if (not request.POST.get("m_S")) and (not request.POST.get("m_M")) and (not request.POST.get("m_L")) and (not request.POST.get("fm_S")) and (not request.POST.get("fm_M")) and (not request.POST.get("fm_L")):
             images = Human_model_img.objects.all()
@@ -62,6 +63,7 @@ def select_cloth(request):
                 'img': img,
                 'name':'m_S',
                 'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
 
@@ -72,7 +74,8 @@ def select_cloth(request):
             context = {
                 'img': img,
                 'name':'m_M',
-                'cloth_img':cloth_img
+                'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
         
@@ -84,6 +87,7 @@ def select_cloth(request):
                 'img': img,
                 'name':'m_L',
                 'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
 
@@ -95,6 +99,7 @@ def select_cloth(request):
                 'img': img,
                 'name':'fm_S',
                 'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
 
@@ -106,6 +111,7 @@ def select_cloth(request):
                 'img': img,
                 'name':'fm_M',
                 'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
         
@@ -117,6 +123,7 @@ def select_cloth(request):
                 'img': img,
                 'name':'fm_L',
                 'cloth_img':cloth_img,
+                'id_count':id_count,
             }
             return render(request, 'cloth_select.html', context)
 

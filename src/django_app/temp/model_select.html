@@ -50,8 +50,8 @@
                                 <br>
                                 <img id="{{ image.model_name }}_img" class='img-fluid' src="{{ MEDIA_URL }}{{ image.img }}" width="auto" height="auto"><br>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-Light btn-block active">
-                                      <input type="radio" name="{{ image.model_name }}" id="{{ image.model_name }}" autocomplete="off">選択
+                                    <label id="{{ image.model_name }}" lass="btn btn-Light btn-block active">
+                                      <input type="radio" name="{{ image.model_name }}" value="{{ image.model_name }}" autocomplete="off">選択
                                     </label>
                                     <!-- <p id="m_S_message"></p> -->
                                 </div>         
@@ -85,29 +85,62 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script>
 
-            document.getElementById("alert").style = "visibility:hidden;"
-
-            // function alert(){
-
-            //     var am = document.getElementById("alert_message") == "";
-
-            //     if (am != ""){
-            //         document.getElementById("alert").style = "visibility:visible;"              
-            //     }
-            // }
-
-            var m_S_checked = document.getElementById("m_S").checked;
-            if (m_S_checked){
-                console.log("m_Sが選択されました")
-                document.getElementById("m_S").style = "border:solid 3px #696969;";
-                document.getElementById("m_S_message").innerHTML = "m_Sを選択しました";
-            }else{
-                document.getElementById("m_S").style = "border:solid 3px #696969;";          
-            }
-
-
-        </script>
     </body>
+    <script>
+        $('#m_S').click(function(){
+            $('#m_S').css("background-color", "#c0c0c0");
+            $('#m_M').css("background-color", "#f8f9fa");
+            $('#m_L').css("background-color", "#f8f9fa");
+            $('#fm_S').css("background-color", "#f8f9fa");
+            $('#fm_M').css("background-color", "#f8f9fa");
+            $('#fm_L').css("background-color", "#f8f9fa");
+        });
+            
+        $('#m_M').click(function(){
+            $('#m_S').css("background-color", "#f8f9fa");
+            $('#m_M').css("background-color", "#c0c0c0");
+            $('#m_L').css("background-color", "#f8f9fa");
+            $('#fm_S').css("background-color", "#f8f9fa");
+            $('#fm_M').css("background-color", "#f8f9fa");
+            $('#fm_L').css("background-color", "#f8f9fa");
+        });
+
+        $('#m_L').click(function(){
+            $('#m_S').css("background-color", "#f8f9fa");
+            $('#m_M').css("background-color", "#f8f9fa");
+            $('#m_L').css("background-color", "#c0c0c0");
+            $('#fm_S').css("background-color", "#f8f9fa");
+            $('#fm_M').css("background-color", "#f8f9fa");
+            $('#fm_L').css("background-color", "#f8f9fa");
+        });
+
+        $('#fm_S').click(function(){
+            $('#m_S').css("background-color", "#f8f9fa");
+            $('#m_M').css("background-color", "#f8f9fa");
+            $('#m_L').css("background-color", "#f8f9fa");
+            $('#fm_S').css("background-color", "#c0c0c0");
+            $('#fm_M').css("background-color", "#f8f9fa");
+            $('#fm_L').css("background-color", "#f8f9fa");
+        });
+
+        $('#fm_M').click(function(){
+            $('#m_S').css("background-color", "#f8f9fa");
+            $('#m_M').css("background-color", "#f8f9fa");
+            $('#m_L').css("background-color", "#f8f9fa");
+            $('#fm_S').css("background-color", "#f8f9fa");
+            $('#fm_M').css("background-color", "#c0c0c0");
+            $('#fm_L').css("background-color", "#f8f9fa");
+        });
+
+        $('#fm_L').click(function(){
+            $('#m_S').css("background-color", "#f8f9fa");
+            $('#m_M').css("background-color", "#f8f9fa");
+            $('#m_L').css("background-color", "#f8f9fa");
+            $('#fm_S').css("background-color", "#f8f9fa");
+            $('#fm_M').css("background-color", "#f8f9fa");
+            $('#fm_L').css("background-color", "#c0c0c0");
+        });
+
+    </script>
 </html>
