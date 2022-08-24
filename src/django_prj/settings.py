@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from .local_setting import SECRET_KEY
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,8 +31,6 @@ MODEL_URL = '/models/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f%b!*s%^5$5*+i9vhf+^u!+zncuxeq5c(c88p%d%y(zgoh@b7k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
